@@ -8,6 +8,7 @@ class PVRCNN(Detector3DTemplate):
 
     def forward(self, batch_dict):
         for cur_module in self.module_list:
+            print("forward", cur_module.model_cfg["NAME"])
             batch_dict = cur_module(batch_dict)
 
         if self.training:
